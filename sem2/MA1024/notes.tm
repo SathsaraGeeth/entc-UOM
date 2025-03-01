@@ -577,7 +577,7 @@
   <\definition>
     Marginal and Joint Probabilities
 
-    Marginal probability is the probaility of singel event happening without
+    Marginal probability is the probaility of single event happening without
     considering others.
 
     Joint probability is the intersectin of two events happening.
