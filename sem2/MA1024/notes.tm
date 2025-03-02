@@ -237,7 +237,7 @@
   <\definition>
     Higher Order Partial Derivatives
 
-    There are <math|n<rsup|n>> possibilities where <math|n> is the order, for
+    There are <math|n<rsup|n>> possibilities when <math|n> is the order, for
     instance all second partial derivatives of <math|f<around*|(|x, y|)>>,
     are defined as <math|f<rsub|x x>=<around*|(|f<rsub|x>|)><rsub|x>,f<rsub|y
     y>= <around*|(|f<rsub|y>|)><rsub|y>, f<rsub|x
@@ -300,6 +300,228 @@
     </proof>
   </theorem>
 
+  <\definition>
+    Differentiability
+
+    If <math|z=f<around*|(|x,y|)>>, then f is differentiable at
+    <math|<around*|(|a,b|)>> if both <math|f<rsub|x><around*|(|a,b|)>>,
+    <math|f<rsub|y><around*|(|a,b|)>> exists and <math|\<Delta\>z> can be
+    expressed in the form; <math|\<Delta\>z=f<around*|(|a+\<Delta\>x,b+\<Delta\>y|)>-f<around*|(|a,b|)>=f<rsub|x><around*|(|a,b|)>\<Delta\>x+f<rsub|y><around*|(|a,b|)>\<Delta\>y+\<epsilon\><rsub|1>\<Delta\>x+\<epsilon\><rsub|2>\<Delta\>y>,
+    where <math|\<epsilon\><rsub|1>,\<epsilon\><rsub|2>\<rightarrow\>0> as
+    <math|<around*|(|\<Delta\>x,\<Delta\>y|)>\<rightarrow\><around*|(|0,0|)>>.
+
+    i.e., <math|f> is differentiable at <math|<around*|(|a,b|)>> if the
+    change of f, <math|\<Delta\>z> is wel approximated by;
+    <math|\<Delta\>z=f<rsub|x><around*|(|a,b|)>\<Delta\>x+f<rsub|y><around*|(|a,b|)>\<Delta\>y>.
+
+    - The equation of the tangent plane to <math|x=f<around*|(|x,y|)>> at
+    <math|<around*|(|x<rsub|0>,y<rsub|0>|)>> is;
+    <math|z-z<rsub|0>=<frac|\<partial\>|\<partial\>
+    x>f<around*|(|x<rsub|0>,y<rsub|0>|)> \<Delta\>x+<frac|\<partial\>|\<partial\>
+    y>f<around*|(|x<rsub|0>,y<rsub|0>|)> \<Delta\>y>.
+  </definition>
+
+  <\theorem>
+    Differentiability Implies Continuity
+
+    If f is differentiable then it is continuous.
+
+    <\proof>
+      Assume that <math|f> is differentaible at <math|<around*|(|a,b|)>>, we
+      wish to show that, <math|lim<rsub|<around*|(|x,y|)>\<rightarrow\><around*|(|a,b|)>>
+      f<around*|(|x,y|)>=f<around*|(|a,b|)>>. We compute,
+      <math|\<Delta\>z=f<around*|(|x,y|)>-f<around*|(|a,b|)>=f<rsub|x><around*|(|a,b|)><around*|(|x-a|)>+f<rsub|y><around*|(|a,b|)><around*|(|y-b|)>+\<epsilon\><rsub|1><around*|(|x-a|)>+\<epsilon\><rsub|2><around*|(|y-b|)>>,
+      and <math|\<Delta\>z\<rightarrow\>0>, as
+      <math|<around*|(|x,y|)>\<rightarrow\><around*|(|a,b|)>>. (and
+      <math|\<epsilon\><rsub|1>,\<epsilon\><rsub|2>\<rightarrow\>0> as
+      <math|<around*|(|x,y|)>\<rightarrow\><around*|(|a,b|)>><math|>).
+    </proof>
+  </theorem>
+
+  <\theorem>
+    \;
+
+    If the partial derivative <math|f<rsub|x>,f<rsub|y>> exist in some
+    neighborhood of the point <math|<around*|(|a,b|)>\<in\>\<bbb-R\><rsup|2>>
+    and they are continuous at <math|<around*|(|a,b|)>>, then <math|f> is
+    differentiable at <math|<around*|(|a,b|)>>.
+
+    <\proof>
+      ****
+    </proof>
+  </theorem>
+
+  <\note>
+    Errors and Approximations
+
+    If <math|z=f<around*|(|x,y|)>> is differentiable at
+    <math|<around*|(|x<rsub|0>,y<rsub|0>|)>>, then for
+    <math|<around*|(|x,y|)>> near <math|<around*|(|x<rsub|0>,y<rsub|0>|)>>,
+    then <math|f<around*|(|x,y|)>\<approx\>f<around*|(|x<rsub|0>,y<rsub|0>|)>+f<rsub|x><around*|(|x<rsub|0>,y<rsub|0>|)>\<Delta\>x+f<rsub|y><around*|(|x<rsub|0>,y<rsub|0>|)>\<Delta\>y>,
+    where <math|\<Delta\>x=x-x<rsub|0>,\<Delta\>y=y-y<rsub|0>>.
+
+    This is called as the linear approximation of <math|f> near
+    <math|<around*|(|x<rsub|0>,y<rsub|0>|)>>. And sometimes written as,
+    <math|\<Delta\>f\<approx\>f<rsub|x>\<Delta\>x+f<rsub|y>\<Delta\>y>, or
+    <math|d f=f<rsub|x> d x+f<rsub|y> d y> which is called the differential
+    of <math|f>.
+  </note>
+
+  <\definition>
+    Differentials
+
+    For a differentiable function of one variable, we define the differential
+    <math|d x> to be an independent variable; that is <math|d x> can be given
+    the value of any real number. The differentail is defined as <math|d
+    y=f<rprime|'><around*|(|x|)> d x>.
+
+    For a differentiable function of two variables,
+    <math|z=f<around*|(|x,y|)>> we define the differentials <math|d x>,
+    <math|d y> to be independent variables, that is they can be given any
+    real values. Then the differential <math|d x>, also called the total
+    differential is defined by, <math|d z=f<rsub|x> d x+f<rsub|y> d y>.
+  </definition>
+
+  <\theorem>
+    Chain Rule
+
+    1) Let <math|x<around*|(|t|)>> and <math|y<around*|(|t|)>> be single
+    variable differentiable functions. Let <math|f<around*|(|x,y|)>> be a two
+    variabe function having continuous first order partial derivatives. Then
+    for the function <math|f<around*|(|x<around*|(|t|)>,y<around*|(|t|)>|)>>
+    of the single variable <math|t> we have, <math|<frac|d f|d
+    t>=<frac|\<partial\> f|\<partial\> x> <frac|d x|d t>+<frac|\<partial\>
+    f|\<partial\> y> <frac|d y|d t>>.
+
+    2) Let <math|f<around*|(|x,y|)>> have continuous first order partial
+    derivatives. Suppose <math|x=x<around*|(|s,t|)>> and
+    <math|y=y<around*|(|s,t|)>> are functions such that
+    <math|x<rsub|s>,x<rsub|t>,y<rsub|s>,y<rsub|t>> are also continuous. Then
+    <math|<frac|\<partial\> f|\<partial\> s>=<frac|\<partial\> f|\<partial\>
+    x>\<nospace\><frac|\<partial\> x|\<partial\> s>+<frac|\<partial\>
+    f|\<partial\> y> <frac|\<partial\> y|\<partial\> s>>,
+    <math|><math|<frac|\<partial\> f|\<partial\> t>=<frac|\<partial\>
+    f|\<partial\> x>\<nospace\><frac|\<partial\> x|\<partial\>
+    t>+<frac|\<partial\> f|\<partial\> y> <frac|\<partial\> y|\<partial\>
+    t>>.
+
+    This fact can easily extend to the case of more than two variables;
+
+    Given a differentiable function <math|f<around*|(|x<rsub|1>,x<rsub|2>,x<rsub|3>,\<ldots\>,x<rsub|n>|)>>
+    defined at points of <math|\<bbb-R\><rsup|n>>, consider the values of
+    <math|f> along a curve <math|x<rsub|1>=x<rsub|1><around*|(|t|)>,x<rsub|2>=x<rsub|2><around*|(|t|)>,\<ldots\>,x<rsub|n>=x<rsub|n><around*|(|t|)>>.
+    Here <math|t\<in\>\<bbb-R\>> is a parameter along the curve. Then for
+    function <math|w<around*|(|t|)>=f<around*|(|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|n>|)>>
+    of the single variable t, if f, <math|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|n>>
+    are differentiable, we have, <math|<frac|d w|d t>=<frac|\<partial\>
+    w|\<partial\> x<rsub|1>> <frac|d x<rsub|1>|d
+    t>+\<cdots\>+<frac|\<partial\> f|\<partial\> x<rsub|n>> <frac|d
+    x<rsub|n>|d t>>, where each <math|<frac|\<partial\> w|\<partial\>
+    x<rsub|i>>> is evaluated at <math|<around*|(|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|n>|)>>.
+
+    <\proof>
+      ***
+    </proof>
+  </theorem>
+
+  <\definition>
+    Directional Derivatives
+
+    The directional derivative of f at <math|x<rsub|0>,y<rsub|0>> in the
+    direction of a unit vector <math|u=<around*|(|a,b|)>> is, <math|D<rsub|u>
+    f<around*|(|x<rsub|0>,y<rsub|0>|)>=lim<rsub|h\<rightarrow\>0><frac|f<around*|(|x<rsub|0>+h
+    a,y<rsub|0>+h b|)>-f<around*|(|x<rsub|0>,y<rsub|0>|)>|h>> if the limit
+    exists.
+  </definition>
+
+  <\definition>
+    Divergence
+
+    If f is a function of two variables <math|x,y> then the gradient of f,
+    <math|\<nabla\>f=\<less\>f<rsub|x>,f<rsub|y>\<gtr\>=f\<cdummy\>\<less\><frac|\<partial\>|\<partial\>
+    x>,<frac|\<partial\>|\<partial\> y>\<gtr\>>.
+  </definition>
+
+  <\theorem>
+    \;
+
+    If f is a two variable function continuous first parital derivatives
+    <math|f<rsub|x>,f<rsub|y>>, then f has a directional derivative in the
+    direction of any unit vector <math|u=<around*|(|a,b|)>> and,
+    <math|D<rsub|u> f<around*|(|x,y|)>=f<rsub|x><around*|(|x,y|)>
+    a+f<rsub|y><around*|(|x,y|)> b>.
+
+    i.e., <math|D<rsub|u> f=\<nabla\>f \<cdummy\> u>.
+
+    <\proof>
+      ***
+    </proof>
+  </theorem>
+
+  <\theorem>
+    Maximizing the Directional Derivative
+
+    Suppose f is a differentiable function of two or three variables. The
+    maximum value of the directional derivative <math|D<rsub|u>
+    f<around*|(|x|)>> is <math|<around*|\||\<nabla\>f<around*|(|x|)>|\|>> and
+    it occurs when u has the same direction as the gradient vector
+    <math|\<nabla\>f<around*|(|x|)>>.
+
+    <\proof>
+      <math|D<rsub|u> f=\<nabla\>f \<cdummy\> u=<around*|\||\<nabla\>f|\|>
+      <around*|\|| u|\|> cos \<theta\>=<around*|\||\<nabla\>f|\|>cos
+      \<theta\>>, where <math|\<theta\>> is the angle between
+      <math|\<nabla\>f>, and u. The maximum of <math|D<rsub|u>> occurs when
+      <math|cos \<theta\>=1>, i.e., when <math|\<nabla\>f>, and u are in the
+      same direction.
+    </proof>
+  </theorem>
+
+  <\note>
+    Tangent Planes to Level Surfaces
+
+    Suppose <math|S> is a surface with equation
+    <math|F<around*|(|x,y,z|)>=k>, that us it is a level surface of a
+    function <math|F> of three variables, and let
+    <math|P<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>> be a point on S. Also
+    let <math|C> be any curve that lies on <math|S>, and passes through the
+    point <math|P>.
+
+    Let <math|C> be described by the continunous function
+    <math|<with|font-series|bold|r><around*|(|t|)>=<around*|(|x<around*|(|t|)>,y<around*|(|t|)>,z<around*|(|t|)>|)>>,
+    and <math|t<rsub|0>> be the parameter value corresponding to <math|P>,
+    that is <math|<with|font-series|bold|r><around*|(|t<rsub|0>|)>=<around*|(|x<around*|(|t<rsub|0>|)>,y<around*|(|t<rsub|0>|)>,z<around*|(|t<rsub|0>|)>|)>=<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>>.
+    Since <math|C> lies on <math|S> any point
+    <math|<around*|(|x<around*|(|t|)>,y<around*|(|t|)>,z<around*|(|t|)>|)>>
+    must satisfy the equation <math|S>; <math|F<around*|(|x<around*|(|t|)>,y<around*|(|t|)>,z<around*|(|t|)>|)>=k>.
+
+    If <math|x,y,z> are differentaible functions of <math|t> and <math|F> is
+    also differentiable, then we by the Chain rule; <math|F<rsub|x> <frac|d
+    x|d t>+F<rsub|y> <frac|d y|d t>+F<rsub|z> <frac|d z|d t>=0>. But, <math|>
+    <math|\<nabla\>F \<cdummy\> <with|font-series|bold|r<rprime|'>>=0>, in
+    particular when <math|t=t<rsub|0>>, we have
+    <math|\<nabla\>F<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)> \<cdummy\>
+    <with|font-series|bold|r<rprime|'>><around*|(|t<rsub|0>|)>=0><math|>.
+    That is the gradient of <math|F> at <math|P> is perpendicular to the
+    tangent vector of curve <math|C> at <math|P>.
+
+    But since <math|C> is an arbitary curve, if
+    <math|F<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>\<neq\>0> we defined
+    the tangent plane to the level surface <math|S> at
+    <math|P<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>> as the plane that
+    passes through <math|P> and has normal vector
+    <math|\<nabla\>F<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>>.
+
+    Now we can write the equation of this tangent plane as,
+    <math|F<rsub|x><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)><around*|(|x-x<rsub|0>|)>+F<rsub|y><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)><around*|(|y-y<rsub|0>|)>+F<rsub|z><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)><around*|(|z-z<rsub|0>|)>=0>.
+
+    The normal line to <math|S> at <math|P> is the line passing through
+    <math|P> and perpendicular to the tangent plane. The direction of the
+    normal line is therefore given by the gradient vector
+    <math|><math|\<nabla\>F<around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>> and
+    so, it symmetric equations are <math|<frac|x-x<rsub|0>|F<rsub|x><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>>=<frac|y-y<rsub|0>|F<rsub|y><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>>-<frac|z-z<rsub|0>|F<rsub|z><around*|(|x<rsub|0>,y<rsub|0>,z<rsub|0>|)>>>.
+  </note>
+
   <with|font-series|bold|II. Probability>
 
   <with|font-series|bold|<with|font-shape|italic|0. Introduction>>
@@ -345,7 +567,9 @@
     \;
 
     The set of all possible outcome is known as the
-    <with|font-series|bold|sample space>, usually denoted by S.
+    <with|font-series|bold|sample space>, usually denoted by S. (The set of
+    possible outcomes must be mutually exclusive and e=collectively
+    exhaustive).
 
     Any subset E of the sample space is known as an
     <with|font-series|bold|event>, i.e., an event is a set consisting of
@@ -386,11 +610,11 @@
     the number of events is finite.
 
     The operations of forming unions, intersections, and complements of
-    events obey; commutaive, associative, and distributive law.
+    events obey; the commutaive, associative, and distributive laws.
   </definition>
 
   <\definition>
-    The Probavility of an Event
+    The Probability of an Event
 
     For an event <math|>E of sample space S, we define
     <math|n<around*|(|E|)>> to be the number of times in the first n
@@ -423,6 +647,8 @@
     The conditional probability that E occurs given that F has occured is,
     <math|P<around*|(|E<around*|\||F|\<nobracket\>>|)>=<frac|P<around*|(|E
     F|)>|P<around*|(|F|)>>> if <math|P<around*|(|F|)>\<gtr\>0>.
+
+    Remark: Condional probability is a just as good probilistic law.
   </theorem>
 
   <\theorem>
@@ -482,6 +708,10 @@
     F|)>=P<around*|(|E|)>P<around*|(|F|)>>. But the first equation only holds
     only if <math|P<around*|(|F|)>\<gtr\>0> and the later is symmetric. Thus
     the later is more suitable for the definiton of independency.
+
+    - Conditional independence and impendence do not imply each other.
+
+    - Pairwise independence does not imply indepedence.
   </definition>
 
   <\proposition>
@@ -522,6 +752,10 @@
     For a continuous random variable X, we define the cumalative distribution
     function <math|F<rsub|X><around*|(|x|)>=P<around*|(|X\<leqslant\>x|)>=<big|int><rsub|-\<infty\>><rsup|x>f<rsub|X><around*|(|t|)>
     d t>. (Futhermore <math|<big|int>f<around*|(|x|)>=F<around*|(|X|)>\<Rightarrow\>F<rprime|'><around*|(|x|)>=f<around*|(|x|)>>).
+
+    Remark:
+
+    We can mixed distributions which is a combination of a PDF and a PMF.
   </definition>
 
   <\definition>
@@ -540,9 +774,10 @@
     For a continuous random variable X;
 
     <math|\<bullet\>> Expected Value, <math|E<around*|[|X|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>>x
-    p<rsub|X><around*|(|x|)>>.
+    p<rsub|X><around*|(|x|)> d x>.
 
-    <math|\<bullet\>> Variance, <math|Var<around*|(|X|)>=E<around*|[|<around*|(|X-E<around*|[|X|]>|)><rsup|2>|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>><around*|(|x-E<around*|[|X|]>|)><rsup|2>p<rsub|X><around*|(|x|)>=E<around*|[|X<rsup|2>|]>-<around*|(|E<around*|[|X|]>|)><rsup|2>>.
+    <math|\<bullet\>> Variance, <math|Var<around*|(|X|)>=E<around*|[|<around*|(|X-E<around*|[|X|]>|)><rsup|2>|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>><around*|(|x-E<around*|[|X|]>|)><rsup|2>p<rsub|X><around*|(|x|)>
+    d x=E<around*|[|X<rsup|2>|]>-<around*|(|E<around*|[|X|]>|)><rsup|2>>.
 
     <math|\<bullet\>> The standard deviation, <math|\<sigma\><rsub|X>> is
     defined as <math|\<sigma\><rsup|2><rsub|X>=Var<around*|(|X|)>>.
@@ -556,7 +791,8 @@
     1. <math|E<around*|[|g<around*|(|x|)>|]>=<big|sum><rsub|x>g<around*|(|x|)>
     p<rsub|X><around*|(|x|)>> if <math|X> is discrete, or
     <math|E<around*|[|g<around*|(|x|)>|]>=<big|int><rsup|\<infty\>><rsub|-\<infty\>>g<around*|(|x|)>
-    f<rsub|X><around*|(|x|)> d x> if X is continuous.
+    f<rsub|X><around*|(|x|)> d x> if X is continuous. (in general
+    <math|E<around*|(|g<around*|(|X|)>|)>\<neq\>g<around*|(|E<around*|[|X|]>|)>>.
 
     2. <math|E<around*|[|\<alpha\>X+\<beta\>|]>=\<alpha\>E<around*|[|X|]>+\<beta\>>,
     where <math|\<alpha\>,\<beta\>\<in\>\<bbb-R\>>.
@@ -577,43 +813,86 @@
   <\definition>
     Marginal and Joint Probabilities
 
-    Marginal probability is the probaility of single event happening without
+    Marginal probability is the probability of single event happening without
     considering others.
 
-    Joint probability is the intersectin of two events happening.
+    Joint probability is the intersection of two events happening.
 
     <math|\<bullet\>> Conditional PMF:
 
     <math|p<rsub|X<around*|\||A|\<nobracket\>>><around*|(|x|)>=P<rsub|><around*|(|X=x<around*|\||A|\<nobracket\>>|)>>.
 
+    <math|p<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\|||\<nobracket\>>y|)>=P<around*|(|X=x<around*|\||Y=y|\<nobracket\>>|)>=<frac|p<rsub|X,Y><around*|(|x,y|)>|p<rsub|Y><around*|(|y|)>>>
+
+    <math|\<bullet\>> Conditional PDF:
+
+    <math|f<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\||y|\<nobracket\>>|)>=<frac|f<rsub|X,Y><around*|(|x,y|)>|f<rsub|Y><around*|(|y|)>>>.
+
+    (If independent <math|f<rsub|X,Y>=f<rsub|X> f<rsub|Y>>, thus
+    <math|f<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\||y|\<nobracket\>>|)>=f<rsub|X><around*|(|x|)>>).
+
     <math|\<bullet\>> Conditional Expectation:
 
     <math|E<around*|[|X<around*|\||A|\<nobracket\>>|]>=E<around*|[|X|]>=<big|sum><rsub|x>x
-    p<rsub|X<around*|\||A|\<nobracket\>>><around*|(|x|)>>.
+    p<rsub|X<around*|\||A|\<nobracket\>>><around*|(|x|)>>
+
+    <math|\<rightarrow\>> Total expectation theorem: Let the sample space be
+    partititoned into disjoint events <math|A<rsub|1>,A<rsub|2>,\<ldots\>,A<rsub|n>>.
+    Then,
+
+    <math|P<around*|(|B|)>=<big|sum><rsub|i=1><rsup|n>P<around*|(|A<rsub|i>|)>P<around*|(|X<around*|\||A<rsub|i>|)>\<Rightarrow\>p<rsub|X><around*|(|x|)>=<big|sum><rsub|i=1><rsup|n>P<around*|(|A<rsub|i>|)>p<rsub|X<around*|\||A<rsub|i>|\<nobracket\>>><around*|(|x|)>|\<nobracket\>>>.
+
+    <math|E<around*|[|X|]>=<big|sum><rsub|i=1><rsup|n>P<around*|(|A<rsub|i>|)>E<around*|[|X<around*|\||A<rsub|i>|\<nobracket\>>|]>>.
 
     <math|\<bullet\>> Joint PMF:
 
     <math|p<rsub|X,Y><around*|(|x,y|)>=P<around*|(|X=x,<infix-and>Y=y|)>>.
 
     <math|p<rsub|X,Y><around*|(|x,y|)>=P<around*|(|X=x|)> P<around*|(|Y=y|)>>
-    if <math|X,Y> are independent.
+    for all <math|x,y>, iff <math|X,Y> are independent.
 
-    <math|\<bullet\>> Joint Probability:
+    <math|\<bullet\>> Joint PDF:
 
-    <math|P<around*|(|X\<leqslant\>x,Y\<leqslant\>y|)>=<big|sum><rsub|x><big|sum><rsub|y>p<rsub|X,Y><around*|(|x,y|)>>.
+    <math|P<around*|(|<around*|(|X,Y|)>\<in\>S|)>=<big|int><big|int><rsub|S>f<rsub|X,Y><around*|(|x,y|)>
+    d x d y>.
+
+    <math|f<rsub|X,Y><around*|(|x,y|)>=f<rsub|X><around*|(|x|)>
+    f<rsub|Y><around*|(|y|)>> for all <math|x,y>, iff <math|X,Y> are
+    independent.
+
+    <math|\<bullet\>> Joint Expectation:
+
+    <math|E<around*|[|<around*|(|X,Y|)>|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>g<around*|(|x,y|)>f<rsub|X,Y><around*|(|x,y|)>
+    d x d y>.
+
+    <math|E<around*|[|<around*|(|X,Y|)>|]>=<big|sum><rsub|x><big|sum><rsub|y>g<around*|(|x,y|)>p<rsub|X,Y><around*|(|x,y|)>>.
+
+    <math|\<bullet\>> Joint <math|\<rightarrow\>> Marginal:
+
+    The marginal probability: <math|P<around*|(|X\<leqslant\>x,Y\<leqslant\>y|)>=<big|sum><rsub|x><big|sum><rsub|y>p<rsub|X,Y><around*|(|x,y|)>>.
+
+    The marginal probability: <math|P<around*|(|X\<leqslant\>x,Y\<leqslant\>y|)>=<big|int><rsub|x><big|int><rsub|y>p<rsub|X,Y><around*|(|x,y|)>
+    d y d x>.
 
     The marginal PMF; <math|p<rsub|X><around*|(|x|)>=<big|sum><rsub|y>p<rsub|X,Y><around*|(|x,y|)>>.
 
-    <math|p<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\|||\<nobracket\>>y|)>=P<around*|(|X=x<around*|\||Y=y|\<nobracket\>>|)>=<frac|p<rsub|X,Y><around*|(|x,y|)>|p<rsub|Y><around*|(|y|)>>>.
+    The marginal PDF; <math|p<rsub|X><around*|(|x|)>=<big|int><rsub|y>p<rsub|X,Y><around*|(|x,y|)>
+    d y>.
+
+    <math|\<bullet\>> Bayes Rule:
+
+    Discrete X, Y:- <math|><math|p<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\|||\<nobracket\>>y|)>=<frac|p<rsub|X,Y><around*|(|x,y|)>|p<rsub|Y><around*|(|y|)>>=<frac|p<rsub|X><around*|(|x|)>
+    p<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>|p<rsub|Y><around*|(|y|)>>>,
+    where <math|p<rsub|Y><around*|(|y|)>=<big|sum><rsub|y>p<rsub|X><around*|(|x|)>p<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|y<around*|\|||\<nobracket\>>x|)>>.
+
+    Discrete X, continuous Y:- <math|><math|p<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\|||\<nobracket\>>y|)>=<frac|p<rsub|X,Y><around*|(|x,y|)>|f<rsub|Y><around*|(|y|)>>=<frac|p<rsub|X><around*|(|x|)>
+    p<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>|f<rsub|Y><around*|(|y|)>>>,
+    where <math|f<rsub|Y><around*|(|y|)>=<big|sum><rsub|x>p<rsub|X><around*|(|x|)>f<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>>.
+
+    Continuous X, Y:- <math|><math|f<rsub|X<around*|\||Y|\<nobracket\>>><around*|(|x<around*|\|||\<nobracket\>>y|)>=<frac|f<rsub|X,Y><around*|(|x,y|)>|f<rsub|Y><around*|(|y|)>>=<frac|f<rsub|X><around*|(|x|)>
+    f<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>|f<rsub|Y><around*|(|y|)>>>,
+    where <math|f<rsub|Y><around*|(|y|)>=<big|sum><rsub|x>p<rsub|X><around*|(|x|)>f<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>>.
   </definition>
-
-  \;
-
-  \;
-
-  \;
-
-  \;
 
   <with|font-series|bold|III. Numerical Analysis>
 </body>
