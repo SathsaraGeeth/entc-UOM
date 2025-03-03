@@ -53,7 +53,7 @@
     d t>.
 
     - For an infinite time period the average power is defined as
-    <math|E<rsub|\<infty\>>\<assign\>lim<rsub|T\<rightarrow\>\<infty\>>
+    <math|P<rsub|\<infty\>>\<assign\>lim<rsub|T\<rightarrow\>\<infty\>>
     <frac|1|2 T> <big|int><rsub|-T><rsup|T><around*|\||x<around*|(|t|)>|\|><rsup|2>
     d t>.
 
@@ -73,8 +73,8 @@
     <big|sum><rsub|n=-N><rsup|N><around*|\||x<around*|[|n|]>|\|><rsup|2>=<big|sum><rsub|n=-\<infty\>><rsup|\<infty\>><around*|\||x<around*|[|n|]>|\|><rsup|2>>.
 
     - For an infinite time period the average power is defined as
-    <math|E<rsub|\<infty\>>\<assign\>lim<rsub|N\<rightarrow\>\<infty\>>
-    <frac|1|2 N> <big|sum><rsub|n=-N><rsup|N><around*|\||x<around*|[|n|]>|\|><rsup|2>
+    <math|P<rsub|\<infty\>>\<assign\>lim<rsub|N\<rightarrow\>\<infty\>>
+    <frac|1|2 N+1> <big|sum><rsub|n=-N><rsup|N><around*|\||x<around*|[|n|]>|\|><rsup|2>
     d t>.
 
     Remark:
@@ -96,7 +96,7 @@
     Transformations
 
     Consider the signals <math|x<around*|(|t|)>> and
-    <math|x<around*|(|\<alpha\> t+\<beta\>|)>>,
+    <math|x<around*|(|\<alpha\> <around*|[|t+<frac|\<beta\>|\<alpha\>>|]>|)>>,
 
     - Time shift: If <math|\<beta\>\<less\>0>, the resulting signal is
     delayed by <math|<around*|\||\<beta\>|\|>> (i.e., waveform shifts to the
@@ -104,14 +104,14 @@
     the signal is advanced <math|\<beta\>> (i.e., waveform shifts to the left
     by <math|\<beta\>>).
 
-    - Time reversal: If <math|\<alpha\>\<less\>0>, the signal is reflected
-    around <math|t=0>.
+    - Time reversal: If <math|sgn<around*|(|\<alpha\>|)>=-1>, the signal is
+    reflected around <math|t+<frac|\<beta\>|\<alpha\>>=0>.
 
-    - Time scaling: If <math|<around*|\||\<alpha\>|\|>\<less\>1>, the
+    - Time scaling: If <math|<around*|\||\<alpha\>|\|>\<gtr\>1>, the
     resulting signal is stretched linearly by a factor of
     <math|<around*|\||\<alpha\>|\|>>. Conversely it will be linearly
     compressed by a factor of an <math|<around*|\||\<alpha\>|\|>>, if
-    <math|<around*|\||\<alpha\>|\|>\<gtr\>1>.
+    <math|<around*|\||\<alpha\>|\|>\<less\>1>.
 
     Remark: these properties hold for discrete time signals as well.
   </note>
@@ -220,8 +220,7 @@
     <space|2em><math|\<rightarrow\>> <math|x<around*|(|t|)>> is periodic iff
     <math|e<rsup|j \<omega\><rsub|0> T>=1>. [<math|e<rsup|j \<omega\><rsub|0>
     t>=e<rsup|j \<omega\><rsub|0><around*|(|t+T|)>>=e<rsup|j
-    \<omega\><rsub|0>t> e<rsup|j \<omega\><rsub|0> T>=e<rsup|j
-    \<omega\><rsub|0> t>>].
+    \<omega\><rsub|0>t> e<rsup|j \<omega\><rsub|0> T>>].
 
     <space|2em><math|\<rightarrow\>> if <math|\<omega\><rsub|0>=0>, then
     <math|x<around*|(|t|)>> is periodic for any <math|T> (so <math|T> is not
