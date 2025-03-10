@@ -55,7 +55,7 @@
     1. An <with|font-series|bold|<math|\<varepsilon\>>-disk> around
     <math|<around*|(|a, b|)>> is the set of all points <math|<around*|(|x,
     y|)>\<in\>\<bbb-R\><rsup|2>> whose distance from <math|<around*|(|a,
-    b|)>> is less than <math|\<varepsilon\>>.
+    b|)>> is less than <math|\<varepsilon\>\<gtr\>0>.
 
     2. <math|<around*|(|a, b|)>> is an <with|font-series|bold|interior point>
     of D iff some <math|\<varepsilon\>>-disk around <math|<around*|(|a, b|)>>
@@ -311,10 +311,10 @@
     <math|<around*|(|\<Delta\>x,\<Delta\>y|)>\<rightarrow\><around*|(|0,0|)>>.
 
     i.e., <math|f> is differentiable at <math|<around*|(|a,b|)>> if the
-    change of f, <math|\<Delta\>z> is wel approximated by;
+    change of f, <math|\<Delta\>z> is well approximated by;
     <math|\<Delta\>z=f<rsub|x><around*|(|a,b|)>\<Delta\>x+f<rsub|y><around*|(|a,b|)>\<Delta\>y>.
 
-    - The equation of the tangent plane to <math|x=f<around*|(|x,y|)>> at
+    - The equation of the tangent plane to <math|z=f<around*|(|x,y|)>> at
     <math|<around*|(|x<rsub|0>,y<rsub|0>|)>> is;
     <math|z-z<rsub|0>=<frac|\<partial\>|\<partial\>
     x>f<around*|(|x<rsub|0>,y<rsub|0>|)> \<Delta\>x+<frac|\<partial\>|\<partial\>
@@ -544,7 +544,7 @@
 
     The number of permutations of <math|n> objects taken <math|r> at a time
     is: <math|n P r=n<around*|(|n-1|)><around*|(|n-2|)>\<cdots\><around*|(|n-r+1|)>=<frac|n!|<around*|(|n-r|)>!>=n
-    C r\<times\>r!>.
+    C r\<times\>r!>
 
     In general, there are <math|<frac|n!|n<rsub|1>!n<rsub|2>!\<cdots\>n<rsub|r>!>>
     different permutations of <math|n> objects of which <math|n<rsub|1>> are
@@ -568,7 +568,7 @@
 
     The set of all possible outcome is known as the
     <with|font-series|bold|sample space>, usually denoted by S. (The set of
-    possible outcomes must be mutually exclusive and e=collectively
+    possible outcomes must be mutually exclusive and collectively
     exhaustive).
 
     Any subset E of the sample space is known as an
@@ -703,7 +703,7 @@
 
     Remark:
 
-    E and F independed means that, <math|P<around*|(|E<around*|\||F|\<nobracket\>>|)>=<frac|P<around*|(|E
+    - E and F independed means that, <math|P<around*|(|E<around*|\||F|\<nobracket\>>|)>=<frac|P<around*|(|E
     F|)>|P<around*|(|F|)>>\<Rightarrow\>P<around*|(|E
     F|)>=P<around*|(|E|)>P<around*|(|F|)>>. But the first equation only holds
     only if <math|P<around*|(|F|)>\<gtr\>0> and the later is symmetric. Thus
@@ -761,7 +761,7 @@
   <\definition>
     Mean, and Variance
 
-    For a discrete random variable X;
+    For a discrete random variable X, Y;
 
     <math|\<bullet\>> Expected Value, <math|E<around*|[|X|]>=<big|sum><rsub|x>x
     p<rsub|X><around*|(|x|)>>.
@@ -771,7 +771,16 @@
     <math|\<bullet\>> The standard deviation, <math|\<sigma\><rsub|X>> is
     defined as <math|\<sigma\><rsup|2><rsub|X>=Var<around*|(|X|)>>.
 
-    For a continuous random variable X;
+    <math|\<bullet\>> Covariance of X, and Y,
+    <math|Cov<around*|(|X,Y|)>=E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><around*|(|Y-\<mu\><rsub|y>|)>|]>=E<around*|(|X
+    Y|)>-E<around*|(|X|)>E<around*|(|Y|)>>.
+
+    <math|><math|\<bullet\>>Correlation coefficient of <math|X,Y>,
+    <math|\<rho\><rsub|XY>=<frac|Cov<around*|(|X,Y|)>|<sqrt|Var<around*|(|X|)>
+    Var<around*|(|Y|)>>>=<frac|E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><around*|(|Y-\<mu\><rsub|Y>|)>|]>|<sqrt|E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><rsup|2>|]>
+    E<around*|[|<around*|(|Y-\<mu\><rsub|Y>|)><rsup|2>|]>>>>.
+
+    For a continuous random variable X, Y;
 
     <math|\<bullet\>> Expected Value, <math|E<around*|[|X|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>>x
     p<rsub|X><around*|(|x|)> d x>.
@@ -781,6 +790,15 @@
 
     <math|\<bullet\>> The standard deviation, <math|\<sigma\><rsub|X>> is
     defined as <math|\<sigma\><rsup|2><rsub|X>=Var<around*|(|X|)>>.
+
+    <math|\<bullet\>> Covariance of X, and Y,
+    <math|Cov<around*|(|X,Y|)>=E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><around*|(|Y-\<mu\><rsub|y>|)>|]>=E<around*|(|X
+    Y|)>-E<around*|(|X|)>E<around*|(|Y|)>>.
+
+    <math|><math|\<bullet\>>Correlation coefficient of <math|X,Y>,
+    <math|\<rho\><rsub|XY>=<frac|Cov<around*|(|X,Y|)>|<sqrt|Var<around*|(|X|)>
+    Var<around*|(|Y|)>>>=<frac|E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><around*|(|Y-\<mu\><rsub|Y>|)>|]>|<sqrt|E<around*|[|<around*|(|X-\<mu\><rsub|X>|)><rsup|2>|]>
+    E<around*|[|<around*|(|Y-\<mu\><rsub|Y>|)><rsup|2>|]>>>>.
   </definition>
 
   <\proposition>
@@ -807,7 +825,25 @@
     5. <math|Var<around*|(|X+Y|)>=Var<around*|(|X|)>+Var<around*|(|Y|)>+2
     Covar<around*|(|X,Y|)>>.
 
-    6. <math|Covar<around*|(|X,Y|)>=0>, if <math|X,Y> are independent.\ 
+    6. <math|Cov<around*|(|X,Y|)>=0>, if <math|X,Y> are independent.
+    (converse is not true).
+
+    7. <math|Cov<around*|(|X,Y|)>=Cov<around*|(|Y,X|)>>.
+
+    8. <math|Cov<around*|(|X, a|)>=0>, where <math|a\<in\>\<bbb-R\>>.
+
+    9. <math|Cov<around*|(|X+a,Y+b|)>=Cov<around*|(|X,Y|)>,> where
+    <math|a,b\<in\>\<bbb-R\>>
+
+    10. <math|Cov<around*|(|a X+b Y,c W+d W|)>=a c Cov<around*|(|X,W|)>+ a d
+    Cov<around*|(|X,V|)>+b c Cov<around*|(|Y,W|)>+b d Cov<around*|(|Y,V|)>>,
+    where <math|Y,W> are random variables, and <math|a,b,c,d\<in\>\<bbb-R\>>.
+
+    11. <math|-1\<leqslant\>\<rho\><rsub|XY>\<leqslant\>1>.
+
+    12. <math|\<rho\><rsub|X Y>=1\<Leftrightarrow\><around*|(|X-E<around*|[|X|]>|)>=c<around*|(|Y-E<around*|[|Y|]>|)>>,
+    i.e., linerly related. Conversly <math|X,Y> are independet implies
+    <math|\<rho\><rsub|X Y>=0>. (converse is not true).
   </proposition>
 
   <\definition>
@@ -862,10 +898,10 @@
 
     <math|\<bullet\>> Joint Expectation:
 
-    <math|E<around*|[|<around*|(|X,Y|)>|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>g<around*|(|x,y|)>f<rsub|X,Y><around*|(|x,y|)>
+    <math|E<around*|[|g<around*|(|X,Y|)>|]>=<big|int><rsub|-\<infty\>><rsup|\<infty\>><big|int><rsub|-\<infty\>><rsup|\<infty\>>g<around*|(|x,y|)>f<rsub|X,Y><around*|(|x,y|)>
     d x d y>.
 
-    <math|E<around*|[|<around*|(|X,Y|)>|]>=<big|sum><rsub|x><big|sum><rsub|y>g<around*|(|x,y|)>p<rsub|X,Y><around*|(|x,y|)>>.
+    <math|E<around*|[|g<around*|(|X,Y|)>|]>=<big|sum><rsub|x><big|sum><rsub|y>g<around*|(|x,y|)>p<rsub|X,Y><around*|(|x,y|)>>.
 
     <math|\<bullet\>> Joint <math|\<rightarrow\>> Marginal:
 
@@ -894,7 +930,127 @@
     where <math|f<rsub|Y><around*|(|y|)>=<big|sum><rsub|x>p<rsub|X><around*|(|x|)>f<rsub|Y<around*|\||X|\<nobracket\>>><around*|(|y<around*|\||x|\<nobracket\>>|)>>.
   </definition>
 
+  <\note>
+    \;
+
+    <with|font-series|bold|Frequency Curve>
+
+    - When the no of intervals get large the frequency polygon will
+    approaches the smooth curve known as the frequency curve. Frequency curve
+    is useful to get some idea about the shape of the frequency distribution.
+
+    - Shape of the frequency curve:
+
+    <space|2em>1. Skewness: a measure of the lack of symmetry. [if symmetric
+    then the curve looks the same to the left and right of the center point.
+    if positively symmetric right tail is longer, and conversly the left tail
+    is longer if negatively skewed].
+
+    <space|2em>2. Kurtosis: a measure of whether the data are peaked or flat
+    relative to a normal distribution. Data sets with high kurtosis tend to
+    have distinct peak near the mean, decline rather rapidly and have heavy
+    tails. Conversly data sets with low kurtosis tend to have a flat top near
+    the mean rather than a sharp peak.
+
+    <with|font-series|bold|Measures of Central Tendency>
+
+    - Describes the distribution using a single vlaue. A measure of location
+    is a quantity that locates a particular position in the frequency
+    distribution.
+
+    - Any measure indicating a center of a distribution is called the measure
+    of central tendency. The most common measures of central location are the
+    mean, median, and mode.
+
+    <with|font-series|bold|Empirical Rule>
+
+    - This applies only to apporixmately normal bell shaped distribution.
+
+    <space|2em><math|\<rightarrow\>> The area between <math|\<pm\>\<sigma\>>
+    from <math|\<mu\>> is <math|0.68>.
+
+    <space|2em><math|\<rightarrow\>> The area between <math|\<pm\>2\<sigma\>>
+    from <math|\<mu\>> is <math|0.95>.
+
+    <space|2em><math|\<rightarrow\>> The area between <math|\<pm\>3\<sigma\>>
+    from <math|\<mu\>> is <math|0.997>.
+
+    <with|font-series|bold|Estimation of Population Parameters using Sample
+    Values>
+
+    There are esitimators which are often categorized into point esitmators
+    and interval estimators.
+
+    <math|\<bullet\>> Point estimation: the point estimator is a statistics
+    which can be used to get a single number as the result. The point
+    estimate of a parameter is a single number based on the sample data that
+    we can consider to be the most plausible value of a parameter.
+
+    <math|\<bullet\>> Interval estimator: the interval estimator is a
+    statistics which can give an upper limit and a lower limit calculation
+    based on the point estimator. The interval etimate is a pait of values
+    calculated as the upper and the lower limits of the limits for a
+    opulation parameter. [concept: confidence intervals for population
+    parameters].
+
+    <math|\<bullet\>> Mean of a population(<math|\<mu\>>) is estimated by
+    <math|<wide|x|\<bar\>>=<frac|<big|sum><rsub|i=1><rsup|n>x<rsub|i>|n>>.
+
+    <math|\<bullet\>> Variance of a population(<math|\<sigma\><rsup|2>>) is
+    estimated using the sample values as,
+    <math|s<rsup|2>=<frac|<big|sum><rsub|i=1><rsup|n><around*|[|x<rsub|i>-<wide|x|\<bar\>>|]><rsup|2>|n-1>=<frac|<big|sum><rsub|i=1><rsup|n><around*|[|x<rsup|2><rsub|i>-n
+    <wide|x|\<bar\>><rsup|2>|]>|n-1>>.
+
+    <math|\<bullet\>> Population standard deviation(<math|\<sigma\>>) is
+    estimated by <math|s=<sqrt|s<rsup|2>>>.
+
+    <math|\<bullet\>> Accuracy of these estimators:
+
+    - Unbiasedness: if a statistic <math|<wide|\<theta\>|^>> is used as an
+    estimator for population paramter <math|\<theta\>> and
+    <math|E<around*|(|<wide|\<theta\>|^>|)>=\<theta\>>, then it is said to be
+    an unbiased estimator of <math|\<theta\>>. For instance sample mean
+    <math|<wide|x|\<bar\>>> is an unbiased estimator for population mean
+    <math|\<mu\>> of a continuous random variable <math|X>, and sample
+    variance <math|s<rsup|2>> is an unbiased estimator for population
+    variance <math|\<sigma\><rsup|2>>. Sample mean is also called the best
+    linear unbiased estimator (BLUE) of population mean.
+
+    - Efficiency, suffucuency, robustness are some other properties held by
+    statictical estimaotors.
+  </note>
+
   <with|font-series|bold|III. Numerical Analysis>
+
+  <\note>
+    Approximations and Errors
+
+    The error that is produced when a calculator/comupter is used to perform
+    real number caluclation is called <with|font-series|bold|round off
+    error>. In computers real numbers are typically represented using
+    floating-point form.
+
+    <with|font-series|bold|Machine numbers> are represented in the normalized
+    decimal floating-point form, <math|\<pm\>0.d<rsub|1>d<rsub|2>\<ldots\>d<rsub|k>\<times\>10<rsup|n>,1\<leqslant\>d<rsub|1>\<leqslant\>9,<infix-and>0\<leqslant\>d<rsub|i>\<leqslant\>9>
+    for each <math|i=2,\<ldots\>,9>. Numbers of this form are called
+    <with|font-series|bold|<math|k>-digit decimal machine numbers>.
+
+    Any positive real number can be normalized to the form,
+    <math|y=0.d<rsub|1>d<rsub|2>\<ldots\>d<rsub|k>d<rsub|k+1>\<ldots\>\<times\>10<rsup|n>>.
+    The <with|font-series|bold|floating point> form of <math|y> denoted by
+    <math|f l<around*|(|y|)>> is obtained by terminating the mantissa of
+    <math|y> at <math|k> decimal digits. There are two common ways;
+
+    - <with|font-series|bold|Chopping>: chop off the digits
+    <math|d<rsub|k+1>d<rsub|k+2>\<ldots\>> to produce the floating-point form
+    <math|f l<around*|(|y|)>=0.d<rsub|1>d<rsub|2>\<ldots\>d<rsub|k>\<times\>10<rsup|n>>.
+
+    - <with|font-series|bold|Rounding>: when <math|d<rsub|k+1>\<geqslant\>5>,
+    add 1 to <math|d<rsub|k>> to obtain <math|f l<around*|(|y|)>>, when
+    <math|d<rsub|k+1>\<less\>5>, chop off all but the first <math|k> digits.
+    Here the floating point has the form, <math|f
+    l<around*|(|y|)>=0.\<delta\><rsub|1>\<delta\><rsub|2>\<ldots\>\<delta\><rsub|k>\<times\>10<rsup|n>>.
+  </note>
 </body>
 
 <\initial>
