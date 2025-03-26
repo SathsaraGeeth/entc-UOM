@@ -1025,8 +1025,8 @@
   <\note>
     Approximations and Errors
 
-    The error that is produced when a calculator/comupter is used to perform
-    real number caluclation is called <with|font-series|bold|round off
+    The error that is produced when a calculator/computer is used to perform
+    real number calculation is called <with|font-series|bold|round off
     error>. In computers real numbers are typically represented using
     floating-point form.
 
@@ -1050,7 +1050,197 @@
     <math|d<rsub|k+1>\<less\>5>, chop off all but the first <math|k> digits.
     Here the floating point has the form, <math|f
     l<around*|(|y|)>=0.\<delta\><rsub|1>\<delta\><rsub|2>\<ldots\>\<delta\><rsub|k>\<times\>10<rsup|n>>.
+
+    <with|font-series|bold|Measuring errors<math|>>: suppose that
+    <math|p\<ast\>> is an approximation to <math|p>. The
+    <with|font-series|bold|abosulte error> is
+    <math|<around*|\||p-p\<ast\>|\|>>, and the
+    <with|font-series|bold|relative error> is
+    <math|<around*|\||<frac|p-p\<ast\>|p>|\|>>, provided that
+    <math|p\<neq\>0>.
+
+    <with|font-series|bold|Finite-digit arithmetic<math|>>: The arithmetic
+    performed in computers are not exact. Accuracy loss due to round off
+    error can be reduced by rearranging calculations. Assume the floating
+    point representations <math|f l<around*|(|x|)>> and <math|f
+    l<around*|(|y|)>> are given for the real numbers <math|x> and <math|y>
+    and that the symbols <math|\<oplus\>,\<ominus\>,\<otimes\>,\<oslash\>>
+    represent machine addition, substraction, multiplication, and division
+    operations respectively. Then,
+
+    - <math|x\<oplus\>y=f l<around*|(|f l<around*|(|x|)>+f
+    l<around*|(|y|)>|)>>,
+
+    - <math|x\<ominus\>y=f l<around*|(|f l<around*|(|x|)>-f
+    l<around*|(|y|)>|)>>,
+
+    - <math|x\<otimes\>y=f l<around*|(|f l<around*|(|x|)>\<times\>f
+    l<around*|(|y|)>|)>>,
+
+    - <math|x\<oslash\>y=f l<around*|(|f l<around*|(|x|)>/f
+    l<around*|(|y|)>|)>>.
+
+    <with|font-series|bold|Truncation errors> are the errors that results
+    from using approximation in place of an exactl mathematical procedure.
+    The mathematical formulation that is used extensively in numerical
+    methods to approximate function is the Taylor series.
+
+    <\theorem>
+      Taylor's Theorem
+
+      Suppose <math|f\<in\>C<rsup|n><around*|[|a,b|]>>, that
+      <math|f<rsup|<around*|(|n+1|)>>> exists on <math|<around*|[|a,b|]>>,
+      and <math|x<rsub|0>\<in\><around*|[|a,b|]>>. For every
+      <math|x\<in\><around*|[|a,b|]>>, there exists a number
+      <math|\<xi\><around*|(|x|)>> between <math|x<rsub|0>> and <math|x>
+      with, <math|f<around*|(|x|)>=P<rsub|n><around*|(|x|)>+R<rsub|n><around*|(|x|)>>,
+
+      where <math|P<rsub|n><around*|(|x|)>=f<around*|(|x<rsub|0>|)>+f<rprime|'><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)>+<frac|f<rprime|''>|2!><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)><rsup|2>+\<ldots\>+<frac|f<rsup|<around*|(|n|)>>|n!><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)><rsup|n>=<big|sum><rsub|k=0><rsup|n><frac|f<rsup|<around*|(|k|)>>|k!><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)><rsup|k>>,
+      and <math|R<rsub|n><around*|(|x|)>=<frac|f<rsup|<around*|(|n+1|)>>|<around*|(|n+1|)>!><around*|(|x<rsub|0>|)><around*|(|x-x<rsub|0>|)><rsup|n+1>>.
+
+      Here <math|P<rsub|n><around*|(|x|)>> is called the <math|n<rsup|t h>>
+      Taylor polynomial for f about <math|x<rsub|0>> and
+      <math|R<rsub|n><around*|(|x|)>> is called the remainder term (or
+      truncation error) associated with <math|P<rsub|n><around*|(|x|)>>.
+    </theorem>
   </note>
+
+  <\definition>
+    Algorithm and Convergence
+
+    An algorithm is a set of well defined instructions to solve a particular
+    problem. If a small change of initial data leads to small change in the
+    final results then the algorithm is said to be stable and unstable
+    otherwise. If an algorithm is stable only for certain set of initial data
+    it is said to be conditionally stable.
+
+    <\definition>
+      Suppose that <math|E<rsub|0>> denotes an error introduced at some stage
+      in the calculations and <math|E<rsub|n>> represents the maginitude of
+      the error after n subsequent operations.
+
+      - If <math|E<rsub|n>\<approx\>C<rsub|n>E<rsub|0>>, where C is a
+      constant independent of n, then the growth of error is said to be
+      linear. (stable)
+
+      - If <math|E<rsub|n>\<approx\>C<rsup|n>E<rsub|0>>, for some
+      <math|C\<gtr\>1>, then the growth of error is called exponential.
+      (unstable)
+    </definition>
+
+    <\definition>
+      Rate of Convergence
+
+      Suppose <math|<around*|{|\<beta\><rsub|n>|}>> is a sequence known to
+      converge to zero, and <math|<around*|{|\<alpha\><rsub|n>|}>> converges
+      to a number <math|\<alpha\>>. If <math|\<exists\>K\<in\>\<bbb-R\><rsub|\<gtr\>0>>,
+      s.t., <math|<around*|\||\<alpha\><rsub|n>-\<alpha\>|\|>\<leqslant\>K<around*|\||\<beta\><rsub|n>|\|>>,
+      for large <math|n>. Then we say that
+      <math|<around*|{|\<alpha\><rsub|n>|}>> converges to <math|\<alpha\>>
+      with rate (or order) of convergence
+      <math|O<around*|(|\<beta\><rsub|n>|)>>, and write
+      <math|\<alpha\><rsub|n>=\<alpha\>+O<around*|(|\<beta\><rsub|n>|)>>.
+    </definition>
+
+    <\definition>
+      Suppose that <math|lim<rsub|h\<rightarrow\>0> G<around*|(|h|)>=0> and
+      <math|lim<rsub|h\<rightarrow\>0> F<around*|(|h|)>=L>. If
+      <math|\<exists\>K\<in\>\<bbb-R\><rsub|\<gtr\>0>>, s.t.,
+      <math|<around*|\||F<around*|(|h|)>-L|\|>\<leqslant\>K<around*|\||G<around*|(|h|)>|\|>>,
+      for suffciently small <math|h>, then we write
+      <math|F<around*|(|h|)>=L+O<around*|(|G<around*|(|h|)>|)>>.
+    </definition>
+  </definition>
+
+  <\note>
+    Numerical Solution of Non-linear Equations
+
+    <math|f<around*|(|x|)>=0> is a non-linear equation of one variable where
+    <math|f<around*|(|x|)>> is not linear. A <with|font-series|bold|solution>
+    to the eqaution (or root, or zero of function) is a numerical value of
+    <math|x>, that satisfy the above equation. An equation may or may not
+    have solution or it may have more than one solution. Graphically, a
+    solution is a point where the function cross the <math|x> axis.
+
+    In many cases it is rather dificult or imposible to find analytical
+    solution(s) for a non-linear eqaution. In that case we use
+    <with|font-series|bold|iterative> methods; which consists of first
+    starting from an arbitary point, the closest possible npoint to the
+    solution sought, and then arriving at the solution gradually through
+    succesive tests.
+
+    When choosing a method to solve a non-liner eqaution it is important to
+    consider,
+
+    - Method of convergence (conditions of convergence, speed of convergence,
+    etc)
+
+    - The cost of calculating.
+  </note>
+
+  <\note>
+    Bisection Method
+
+    If <math|f> is a continuous function defined on <math|<around*|[|a,b|]>>
+    with <math|f<around*|(|a|)>>, <math|f<around*|(|b|)>> have opposite
+    signs, the intermidiate value theorem gurantees that,
+    <math|\<exists\>p\<in\><around*|(|a,b|)>>, s.t.,
+    <math|f<around*|(|p|)>=0>. In that case we can use the bisection search;
+
+    <\note>
+      Bisection Algorithm
+
+      I. Consider the interval <math|<around*|[|a,b|]>>, initialize
+      <math|a<rsub|1>=a,b<rsub|1>=b>, and
+      <math|p<rsub|1>=<frac|a<rsub|1>+a<rsub|2>|2>>.
+
+      II. If <math|<around*|\||f<around*|(|p<rsub|1>|)>-0|\|>\<less\>\<varepsilon\>>,
+      then <math|<around*|\||p-p<rsub|1>|\|>\<less\>\<varepsilon\>> and we
+      are done, where <math|\<varepsilon\>\<gtr\>0> is the tolerance.
+
+      III. Otherwise,
+
+      - If <math|f<around*|(|p<rsub|1>|)>> and
+      <math|f<around*|(|a<rsub|1>|)>> have the same sign,
+      <math|p\<in\><around*|(|p<rsub|1>,b<rsub|1>|)>>. Set
+      <math|a<rsub|2>=p<rsub|1>> and <math|b<rsub|2>=b<rsub|1>>.
+
+      - If <math|f<around*|(|p<rsub|1>|)>> and
+      <math|f<around*|(|a<rsub|1>|)>> have the opposite sign,
+      <math|p\<in\><around*|(|p<rsub|1>,b<rsub|1>|)>>. Set
+      <math|a<rsub|2>=a<rsub|1>> and <math|b<rsub|2>=p<rsub|1>>.
+
+      IV. Then reinterate the process with the interval
+      <math|<around*|[|a<rsub|2>,b<rsub|2>|]>>, untill it results in a good
+      enough approximation.
+    </note>
+
+    <\theorem>
+      Bisection Theorem
+
+      Suppose that f is continuous in <math|<around*|[|a,b|]>> and
+      <math|f<around*|(|a|)>\<cdummy\>f<around*|(|b|)>\<less\>0>. The
+      bisection method genrates a sequence <math|<around*|{|p<rsub|n>|}>>
+      approximating a zero <math|p> of f with,
+      <math|<around*|\||p<rsub|n>-p|\|>\<leqslant\><frac|b-a|2<rsup|n>>>,
+      where <math|n\<geqslant\>1>.
+    </theorem>
+
+    <\remark>
+      Limitations of Bisection Algorithm
+
+      Eventhough the convergence is guranteed it is generally slow. Can not
+      find the root of some equations, for instance
+      <math|f<around*|(|x|)>=x<rsup|2>>. Also it fails to determine complex
+      roots.
+
+      Bisection method cannot be applied when there are discontinuities in
+      the desired interval. It also cannot be applied if the function takes
+      the same sign in the interval.
+    </remark>
+  </note>
+
+  \;
 </body>
 
 <\initial>
